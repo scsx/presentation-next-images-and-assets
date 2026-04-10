@@ -24,8 +24,8 @@ export default function ScriptsClient() {
         <>
           <h2 className="text-xl font-bold">Scripts</h2>
           <ul className="flex space-x-4">
-            <li className="bg-blue-200 font-bold p-2">plotly.js → ~3.5 MB</li>
-            <li className="bg-blue-200 font-bold p-2">three.js → ~600 KB</li>
+            <li className="bg-blue-200 font-bold py-1 px-4 rounded">plotly.js → ~3.5 MB</li>
+            <li className="bg-blue-200 font-bold py-1 px-4 rounded">three.js → ~600 KB</li>
           </ul>
           <div className="w-full flex flex-col gap-4">
 
