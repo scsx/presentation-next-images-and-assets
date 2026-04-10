@@ -1,10 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { logScriptTime } from "@/app/utils/logScriptTime"
 
 declare global {
   interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     THREE: any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     Plotly: any
   }
 }
@@ -13,17 +16,27 @@ export default function BadScript() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    logScriptTime("useEffect start")
+
     setMounted(true)
 
     const loadScripts = async () => {
+      logScriptTime("start loading scripts")
+
+      const cacheBust = Date.now()
+
       await Promise.all([
-        loadScript("https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"),
-        loadScript("https://cdn.plot.ly/plotly-2.26.0.min.js")
+        loadScript(`https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js?v=${cacheBust}`),
+        loadScript(`https://cdn.plot.ly/plotly-2.26.0.min.js?v=${cacheBust}`)
       ])
 
-      document.getElementById('status')!.innerText = 'UI Ready'
+      logScriptTime("scripts loaded")
+
+      logScriptTime("UI ready")
 
       // PLOTLY
+      logScriptTime("plotly start")
+
       const plotData = [{
         x: [1, 2, 3, 4, 5],
         y: [1, 4, 9, 16, 25],
@@ -33,7 +46,11 @@ export default function BadScript() {
 
       window.Plotly.newPlot('plotly-chart', plotData)
 
+      logScriptTime("plotly done")
+
       // THREE
+      logScriptTime("three start")
+
       const scene = new window.THREE.Scene()
       const camera = new window.THREE.PerspectiveCamera(75, 300 / 200, 0.1, 1000)
       const renderer = new window.THREE.WebGLRenderer()
@@ -56,15 +73,20 @@ export default function BadScript() {
       }
 
       animate()
+
+      logScriptTime("three running")
     }
 
     loadScripts()
+
+    // DOM ready timing
+    window.addEventListener("DOMContentLoaded", () => {
+      logScriptTime("DOM ready")
+    })
   }, [])
 
   return (
     <>
-      <div id="status">Loading UI...</div>
-
       {/* 🚨 evita hydration mismatch */}
       {mounted && (
         <div className="flex gap-5 p-5">
@@ -72,6 +94,9 @@ export default function BadScript() {
           <div id="three-container" className="w-80 h-52" />
         </div>
       )}
+
+      {/* timeline */}
+      <div id="timeline" className="font-mono" />
     </>
   )
 }
@@ -80,7 +105,10 @@ function loadScript(src: string) {
   return new Promise<void>((resolve) => {
     const s = document.createElement("script")
     s.src = src
-    s.onload = () => resolve()
+    s.onload = () => {
+      logScriptTime(`loaded: ${src.split("/").pop()}`)
+      resolve()
+    }
     document.body.appendChild(s)
   })
 }
