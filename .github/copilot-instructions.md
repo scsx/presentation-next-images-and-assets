@@ -18,7 +18,7 @@ The app should include small, isolated pages for experimenting with different as
 
 * Images
 * Fonts
-* Other static assets if relevant
+* Scripts (three.js)
 
 ---
 
