@@ -11,6 +11,13 @@ function log(label: string) {
   if (el) {
     const item = document.createElement("div")
     item.innerText = `+${delta}ms — ${label}`
+
+    if (label.includes("UI ready")) {
+      item.style.background = "green"
+      item.style.color = "white"
+      item.style.fontWeight = "bold"
+    }
+
     el.appendChild(item)
   }
 }
@@ -34,7 +41,7 @@ export default function BadImagesPage() {
       <div id="timeline" className="h-[240px]" />
 
       {/* HERO (acima do fold) */}
-      <h2>Hero</h2>
+      <h2 className="mt-8 font-bold text-xl">Hero</h2>
       <img
         src={`/images/bici.jpg?v=${cacheBust}`}
         width={1200}
@@ -43,10 +50,10 @@ export default function BadImagesPage() {
       />
 
       {/* espaço para forçar scroll */}
-      <div style={{ height: 800 }} />
+      <div style={{ height: 400 }} />
 
       {/* GALLERY (tudo carrega logo ❌) */}
-      <h2>Gallery</h2>
+      <h2 className="mt-8 font-bold text-xl">Gallery</h2>
 
       <img
         src={`/images/gal1.jpg?v=${cacheBust}`}
@@ -68,11 +75,12 @@ export default function BadImagesPage() {
       />
 
       {/* RESPONSIVE FAIL ❌ */}
-      <h2>Responsive (fail)</h2>
+      <h2 className="mt-8 font-bold text-xl">Responsive (fail, 5070x3380px)</h2>
       <img
-        src={`/images/hero.jpg?v=${cacheBust}`}
+        src={`/images/bici.jpg?v=${cacheBust}`}
         onLoad={() => log("responsive image loaded")}
       />
+      <p>Tip: Open in new tab</p>
     </div>
   )
 }

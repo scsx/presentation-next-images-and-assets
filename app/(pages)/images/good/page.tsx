@@ -37,7 +37,7 @@ export default function GoodImagesPage() {
       <div id="timeline" className="h-[240px]" />
 
       {/* HERO (prioritário ✅) */}
-      <h2>Hero</h2>
+      <h2 className="mt-8 font-bold text-xl">Hero</h2>
       <Image
         src="/images/bici.jpg"
         alt=""
@@ -49,10 +49,10 @@ export default function GoodImagesPage() {
       />
 
       {/* espaço para forçar scroll */}
-      <div style={{ height: 1500 }} />
+      <div style={{ height: 400 }} />
 
       {/* GALLERY (lazy automático ✅) */}
-      <h2>Gallery</h2>
+      <h2 className="mt-8 font-bold text-xl">Gallery</h2>
 
       <Image
         src="/images/gal1.jpg"
@@ -80,7 +80,7 @@ export default function GoodImagesPage() {
       />
 
       {/* RESPONSIVE ✅ */}
-      <h2>Responsive</h2>
+      <h2 className="mt-8 font-bold text-xl">Responsive (750x500px)</h2>
       <Image
         src="/images/bici.jpg"
         alt=""

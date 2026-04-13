@@ -10,6 +10,10 @@ body {
   padding: 2rem;
 }
 
+iframe nav {
+  display: none;
+}
+
 @layer components {
   .largebtn {
     @apply px-8 py-4 text-xl font-semibold text-white bg-gradient-to-b from-blue-700 to-blue-900 rounded-xl shadow-xl transition-all duration-200;

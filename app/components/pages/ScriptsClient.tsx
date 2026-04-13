@@ -159,7 +159,7 @@ onLoad(() => {
                   <li>Runs before hydration</li>
                   <li>❌ Blocks rendering</li>
                   <li>🐌 Slower first paint</li>
-                  <li>⚠️ Only for critical scripts</li>
+                  <li>⚠️ Only for critical scripts, like Analytics (e.g. Blog)</li>
                 </ul>
               </div>
 
