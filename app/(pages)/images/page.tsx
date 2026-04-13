@@ -3,7 +3,7 @@ import Header from "@/app/components/pages/Header";
 
 const Images = () => {
   return (
-    <div className="px-8">
+    <div className="px-8 pb-12">
       <Header />
       <ImagesClient />
     </div>

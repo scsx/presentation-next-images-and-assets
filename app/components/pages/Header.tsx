@@ -10,13 +10,13 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <Link href="/scripts" className="text-blue-500 hover:underline">
-            scripts
+          <Link href="/images" className="text-blue-500 hover:underline">
+            images
           </Link>
         </li>
         <li>
-          <Link href="/images" className="text-blue-500 hover:underline">
-            images
+          <Link href="/scripts" className="text-blue-500 hover:underline">
+            scripts
           </Link>
         </li>
         <li>

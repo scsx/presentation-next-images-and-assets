@@ -167,7 +167,31 @@ const ImagesClient = () => {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4">FAQs</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-4">Extra insights</h2>
+
+            <ul className="space-y-3 text-lg font-semibold">
+              <li>
+                🧠 Next.js optimizes images automatically (resize + compress)
+              </li>
+              <li>
+                📦 Serves modern formats (WebP / AVIF) when supported
+              </li>
+              <li>
+                ⚡ Priority loads critical images first (hero)
+              </li>
+              <li>
+                💤 Images are lazy loaded by default (below the fold)
+              </li>
+              <li>
+                📱 Sizes ensures correct image per device
+              </li>
+              <li>
+                🔁 Same image can generate multiple optimized versions (per screen size)
+              </li>
+              <li>
+                🌍 Images are cached and can be served via CDN
+              </li>
+            </ul>
           </div>
         </div>
       )}

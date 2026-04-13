@@ -14,7 +14,7 @@ export default function Home() {
         {/* split */}
         <div className="flex items-center gap-8">
           {/* left */}
-          <div className="w-1/2 border p-8 bg-zinc-200 h-44">
+          <div className="w-1/2 border p-8 bg-zinc-200 h-52">
             <h2 className="text-3xl font-bold mb-4 text-red-600">
               Traditional way
             </h2>
@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           <p className="font-bold text-2xl">VS</p>
           {/* right */}
-          <div className="w-1/2 border p-8 bg-zinc-200 h-44">
+          <div className="w-1/2 border p-8 bg-zinc-200 h-52">
             <h2 className="text-3xl font-bold mb-4 text-green-600">
               Next.js way
             </h2>
