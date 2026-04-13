@@ -86,7 +86,7 @@ export default function BadScript() {
   }, [])
 
   return (
-    <>
+    <div className="bg-white">
       {/* 🚨 evita hydration mismatch */}
       {mounted && (
         <div className="flex gap-5 p-5">
@@ -96,8 +96,8 @@ export default function BadScript() {
       )}
 
       {/* timeline */}
-      <div id="timeline" className="font-mono" />
-    </>
+      <div id="timeline" className="font-mono p-8" />
+    </div>
   )
 }
 

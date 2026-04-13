@@ -5,7 +5,9 @@ const Scripts = () => {
   return (
     <>
       <Header />
-      <ScriptsClient />
+      <div className="px-8">
+        <ScriptsClient />
+      </div>
     </>
   )
 }

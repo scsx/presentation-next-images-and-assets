@@ -2,8 +2,13 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <nav className="fixed top-2 right-4 z-50">
-      <ul className="flex gap-4">
+    <nav className="relative mb-4 z-50">
+      <ul className="flex gap-4 justify-end px-4">
+        <li>
+          <Link href="/" className="text-blue-500 hover:underline">
+            home
+          </Link>
+        </li>
         <li>
           <Link href="/scripts" className="text-blue-500 hover:underline">
             scripts

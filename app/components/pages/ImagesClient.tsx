@@ -13,12 +13,12 @@ const ImagesClient = () => {
       <div className="flex gap-4">
         <iframe
           src="/images/bad?1"
-          className="w-1/2 h-[3200px] border"
+          className="w-1/2 h-[3300px] border"
           title="badscript"
         />
         <iframe
           src="/images/good?2"
-          className="w-1/2 h-[3200px] border"
+          className="w-1/2 h-[3300px] border"
           title="goodscript"
         />
       </div>
@@ -166,6 +166,8 @@ const ImagesClient = () => {
                 </ul>
               </div>
             </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-4">FAQs</h2>
           </div>
         </div>
       )}

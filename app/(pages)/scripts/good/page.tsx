@@ -23,7 +23,7 @@ export default function GoodScript() {
   }
 
   return (
-    <>
+    <div className="bg-white">
       {/* Plotly */}
       <Script
         src={`https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js?v=${cacheBust}`}
@@ -114,7 +114,7 @@ export default function GoodScript() {
         <div id="three-container" className="w-80 h-52" />
       </div>
 
-      <div id="timeline" className="font-mono" />
-    </>
+      <div id="timeline" className="font-mono p-8" />
+    </div>
   )
 }
