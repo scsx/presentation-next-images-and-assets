@@ -75,7 +75,10 @@ export default function BadImagesPage() {
       />
 
       {/* RESPONSIVE FAIL ❌ */}
-      <h2 className="mt-8 font-bold text-xl">Responsive (fail, 5070x3380px)</h2>
+      <h2 className="mt-8 font-bold text-xl">Responsive (fail, 5070 x 3380px)
+        <br />
+        Same image as hero, same behavior
+      </h2>
       <img
         src={`/images/bici.jpg?v=${cacheBust}`}
         onLoad={() => log("responsive image loaded")}

@@ -13,40 +13,52 @@ const Fonts = () => {
             title="goodscript" />
         </div>
 
-        <h2 className="text-3xl font-bold mt-12 mb-4">Results for Bebas Neue (Google Fonts)</h2>
+        <div className="px-40 pb-12">
+          <h2 className="text-3xl font-bold mt-24 mb-4">Results for Bebas Neue (Google Fonts)</h2>
 
-        <Image
-          src="/results/network-font.png"
-          className="border-2 border-gray-300"
-          alt=""
-          width={800}
-          height={600}
-          priority
-          fetchPriority="high"
-        />
+          <Image
+            src="/results/network-font.png"
+            className="border-2 border-gray-300"
+            alt=""
+            width={800}
+            height={600}
+            priority
+            fetchPriority="high"
+          />
 
-        <div className="flex gap-8 mt-8">
-          {/* BAD */}
-          <ul className="w-1/2 list-disc pl-6 space-y-3 text-xl font-semibold">
-            <li className="text-red-600 font-bold text-2xl">BAD (Google Fonts)</li>
-            <li><strong>Loads CSS first, then font</strong></li>
-            <li><strong>2 requests (CSS + font)</strong></li>
-            <li><strong>External dependency (Google)</strong></li>
-            <li><strong>13.8 kB font size</strong></li>
-            <li><strong>~25 ms font load (+ extra CSS request)</strong></li>
-            <li><strong>Slower render (font arrives later)</strong></li>
-          </ul>
+          <div className="flex gap-8 mt-8">
+            <div className="w-1/2">
+              <h3 className="text-red-600 font-bold text-2xl mb-2">Google Fonts</h3>
+              <ul className="list-disc pl-6 space-y-3 text-xl font-semibold">
+                <li><strong>13.8 kB font size</strong></li>
+                <li><strong>~25 ms font load (+ extra CSS request)</strong></li>
+                <li><strong>Slower render (font arrives later)</strong></li>
+              </ul>
 
-          {/* GOOD */}
-          <ul className="w-1/2 list-disc pl-6 space-y-3 text-xl font-semibold">
-            <li className="text-green-600 font-bold text-2xl">GOOD (Next/font)</li>
-            <li><strong>Font loaded directly</strong></li>
-            <li><strong>1 request only</strong></li>
-            <li><strong>Served locally</strong></li>
-            <li><strong>8.9 kB font size</strong></li>
-            <li><strong>~18 ms load</strong></li>
-            <li><strong>Faster render (no extra roundtrip)</strong></li>
-          </ul>
+              <div className="mt-6 space-y-2 text-xl font-semibold">
+                <div>Browser → <span className="text-red-600">requests CSS from Google</span></div>
+                <div>↓</div>
+                <div>CSS → <span className="text-red-600">requests font file</span></div>
+                <div>↓</div>
+                <div>Render text</div>
+              </div>
+            </div>
+
+            <div className="w-1/2">
+              <h3 className="text-green-600 font-bold text-2xl mb-2">Next/font</h3>
+              <ul className="list-disc pl-6 space-y-3 text-xl font-semibold">
+                <li><strong>8.9 kB font size</strong></li>
+                <li><strong>~18 ms load</strong></li>
+                <li><strong>Faster render (no extra roundtrip)</strong></li>
+              </ul>
+
+              <div className="mt-6 space-y-2 text-xl font-semibold">
+                <div>Browser → <span className="text-green-600">font already defined at build time</span></div>
+                <div>↓</div>
+                <div>Render text</div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

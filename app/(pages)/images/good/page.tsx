@@ -80,7 +80,10 @@ export default function GoodImagesPage() {
       />
 
       {/* RESPONSIVE ✅ */}
-      <h2 className="mt-8 font-bold text-xl">Responsive (750x500px)</h2>
+      <h2 className="mt-8 font-bold text-xl">Responsive (750 x 500px)
+        <br />
+        Same image as hero, different size requested
+      </h2>
       <Image
         src="/images/bici.jpg"
         alt=""
