@@ -1,4 +1,4 @@
-import Header from "@/app/components/pages/Header";
+import Header from "@/app/components/Header";
 import Image from "next/image";
 
 const Fonts = () => {

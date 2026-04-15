@@ -1,5 +1,5 @@
 import ImagesClient from "@/app/components/pages/ImagesClient"
-import Header from "@/app/components/pages/Header";
+import Header from "@/app/components/Header";
 
 const Images = () => {
   return (

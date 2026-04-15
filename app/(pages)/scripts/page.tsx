@@ -1,5 +1,5 @@
 import ScriptsClient from "@/app/components/pages/ScriptsClient"
-import Header from "@/app/components/pages/Header";
+import Header from "@/app/components/Header";
 
 const Scripts = () => {
   return (
